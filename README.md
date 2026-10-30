@@ -24,7 +24,7 @@ A search engine and "more like this" recommender for 2,550 TED and TEDx talks.
 
 ## Running
 ```bash
-pip install pandas scikit-learn
+pip install pandas numpy scikit-learn matplotlib seaborn
 python gui_demo.py
 ```
 
