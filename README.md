@@ -1,14 +1,32 @@
-# mengxuan-ted-retrieval
+# TED Talks Search & Recommendation
 
-Project materials by Mengxuan Shen.
+Individual information-retrieval coursework by **Mengxuan Shen** (Xi'an Jiaotong-Liverpool University).
 
-This is a curated public portfolio repository. Project writeups and original coursework materials are attributed as individual or collaborative in the portfolio site.
+**Portfolio page with live in-browser demo:** https://shine574269.github.io/projects/ted-retrieval.html
+
+A search engine and "more like this" recommender for 2,550 TED and TEDx talks.
+
+## What it does
+- Cleans and combines each talk's title, description and tags.
+- Builds a 5,000-feature unigram/bigram TF-IDF index (scikit-learn).
+- Ranks talks against a free-text query by cosine similarity, then recommends similar talks for any selected result.
+- Tkinter desktop GUI for searching and browsing.
+
+**Evaluation** ("education creativity" query): Precision@5 = 0.80, Precision@10 = 0.60, Recall@10 = 0.75. Main limitation: synonyms are not matched.
 
 ## Files
-- `gui_demo.py`
-- `ted_retrieval_system.py`
-- `original-source-and-data.zip`
-- `dataset.csv`
+| File | Contents |
+|---|---|
+| `ted_retrieval_system.py` | Indexing, search, recommendation and evaluation |
+| `gui_demo.py` | Tkinter desktop interface |
+| `dataset.csv` | TED talk metadata used by the system |
+| `original-source-and-data.zip` | Original coursework source and data as submitted |
 
-## Notes
-Please check licences and team permissions before redistribution. Files with embedded API keys, private settings and caches should not be committed.
+## Running
+```bash
+pip install pandas scikit-learn
+python gui_demo.py
+```
+
+## Credits
+Talk titles, descriptions and links © TED Conferences, LLC (ted.com), used here for non-commercial coursework.
